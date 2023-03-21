@@ -1,0 +1,49 @@
+@import '../../global.scss';
+
+$disabledColor: $light-grey;
+$arrowColor: $black;
+
+@mixin arrow {
+    height: 6px;
+    width: 6px;
+}
+
+@mixin right {
+    transform: rotate(45deg);
+    @include arrow;
+}
+
+@mixin left {
+    transform: rotate(315deg);
+    @include arrow;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 20px;
+}
+
+.rightArrow {
+    border-right: 2px solid $arrowColor;
+    border-top: 2px solid $arrowColor;
+    @include right;
+}
+
+.leftArrow {
+    border-left: 2px solid $arrowColor;
+    border-top: 2px solid $arrowColor;
+    @include left;
+}
+
+.disableLeftArrow {
+    border-left: 2px solid $disabledColor;
+    border-top: 2px solid $disabledColor;
+    @include left;
+}
+
+.disableRightArrow {
+    border-right: 2px solid $disabledColor;
+    border-top: 2px solid $disabledColor;
+    @include right;
+}
