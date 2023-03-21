@@ -1,0 +1,11 @@
+.grid {
+    display: grid;
+    gap: 0 32px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.articleHeading {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}

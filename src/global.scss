@@ -1,0 +1,28 @@
+$black: #000000;
+$very-dark-grey: #303232;
+$dark-grey: #535555;
+$grey: #8A8A8A;
+$light-grey: #CCCCCC;
+$very-light-grey: #DADADA;
+$white: #FFFFFF;
+
+$small-font-family: 'Futura';
+$small-bold-font-family: 'Futura Md BT';
+$description-font-family: 'Futura Bk BT';
+$title-font-family: 'New York Extra Large';
+$heading-font-family: 'Futura XBlk BT';
+$nav-font-family: 'Futura MdCn BT';
+
+$xxsmall-font-size: 10px;
+$xsmall-font-size: 12px;
+$small-font-size: 16px;
+$medium-font-size: 20px;
+$large-font-size: 24px;
+$xlarge-font-size: 32px;
+$xxlarge-font-size: 44px;
+
+@mixin separator {
+    height: 1px;
+    background-color: $very-light-grey;
+    width: 100%;
+}
