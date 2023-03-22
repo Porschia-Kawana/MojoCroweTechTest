@@ -78,6 +78,7 @@
     @include separator;
 
     @media (max-width: $breakpoint-tablet) {
+        margin: 0;
         width: 0;
     }
 }
@@ -86,6 +87,7 @@
     @include separator;
 
     @media (max-width: $breakpoint-phone) {
+        margin: 0;
         width: 0
     }
 }
