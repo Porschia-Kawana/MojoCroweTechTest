@@ -1,8 +1,19 @@
 import React, { useState } from 'react';
 import styles from './Pagination.module.scss';
 
-function Pagination({ callback, range, totalCount, numOfItems }) {
+interface Props {
+    callback: (a: number, b: number) => void;
+    range: Array<number>;
+    totalCount: number;
+    numOfItems: number,
+}
 
+function Pagination({
+    callback,
+    range,
+    totalCount,
+    numOfItems,
+}: Props): JSX.Element {
     const [disableLeft, setDisableLeft] = useState(range[0] <= 0)
     const [disableRight, setDisableRight] = useState(range[1] >= totalCount)
 
@@ -14,7 +25,7 @@ function Pagination({ callback, range, totalCount, numOfItems }) {
                 setDisableLeft(false)
             }
             setDisableRight(false)
-            callback([(range[0] - numOfItems), (range[1] - numOfItems)])
+            callback((range[0] - numOfItems), (range[1] - numOfItems))
         }
     }
 
@@ -26,7 +37,7 @@ function Pagination({ callback, range, totalCount, numOfItems }) {
                 setDisableRight(false)
             }
             setDisableLeft(false)
-            callback([(range[0] + numOfItems), (range[1] + numOfItems)])
+            callback((range[0] + numOfItems), (range[1] + numOfItems))
         }
 
     }

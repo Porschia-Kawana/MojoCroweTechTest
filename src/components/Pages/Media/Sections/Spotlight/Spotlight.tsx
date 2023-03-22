@@ -1,8 +1,13 @@
 import React from 'react'
 import Card from '../../../../../common/Cards/Card';
 import styles from './Spotlight.module.scss';
+import { MediaData } from '../../../../../interfaces/data'
 
-function SpotlightSection({ data }) {
+interface Props {
+    data: MediaData[]
+}
+
+function SpotlightSection({ data }: Props) {
     const audioItems = data.filter((item) => item.type === 'podcast' || item.type === 'video').slice(0, 5);
     const articles = data.filter((item) => item.type === 'article' && item.featured).slice(0, 4);
 

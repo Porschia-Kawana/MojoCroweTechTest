@@ -2,14 +2,19 @@ import React, { useState } from 'react'
 import Card from '../../../../../common/Cards/Card';
 import styles from './Article.module.scss';
 import Pagination from '../../../../../common/Pagination/Pagination';
+import { MediaData } from '../../../../../interfaces/data'
 
-function ArticleSection({ data }) {
+interface Props {
+    data: MediaData[]
+}
+
+function ArticleSection({ data }: Props) {
     const [articles, setArticles] = useState(data.slice(0, 6))
     const [range, setRange] = useState([0, 6])
 
-    const handlePagination = (newRange) => {
-        setRange(newRange)
-        setArticles(data.slice(newRange[0], newRange[1]))
+    const handlePagination = (start: number, end: number) => {
+        setRange([start, end])
+        setArticles(data.slice(start, end))
     }
 
     return (
