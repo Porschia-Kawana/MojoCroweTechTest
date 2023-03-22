@@ -9,14 +9,31 @@
     gap: 32px;
     padding: 52px 120px 44px;
     width: 100vw;
+
+    @media (max-width: $breakpoint-phone) {
+        padding: 52px 30px 44px;
+    }
 }
 
 .content {
     align-items: center;
+    box-sizing: border-box;
     display: flex;
+    width: inherit;
+
+    @media (max-width: $breakpoint-tablet) {
+        align-self: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    @media (max-width: $breakpoint-phone) {
+        padding: 0 30px;
+    }
 }
 
 .navigation {
+    align-items: center;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -49,4 +66,79 @@
     border-radius: 24px;
     color: $white;
     padding: 6px 16px;
+}
+
+.inlineNavigation {
+    display: block;
+
+    @media (max-width: $breakpoint-tablet) {
+        display: none;
+    }
+}
+
+.dropdownNavigation {
+    display: none;
+
+    .dropdown {
+        border-right: 2px solid $black;
+        border-bottom: 2px solid $black;
+        height: 12px;
+        width: 12px;
+        transform: rotate(45deg);
+        margin-bottom: 12px;
+        margin-right: 12px;
+    }
+
+    .dropup {
+        border-left: 2px solid $black;
+        border-top: 2px solid $black;
+        height: 12px;
+        width: 12px;
+        transform: rotate(45deg);
+        margin-bottom: 12px;
+        margin-right: 12px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 45px;
+        right: 72px;
+        width: -moz-fit-content;
+        width: fit-content;
+        z-index: 9;
+
+        .dropdownItem {
+            color: $white;
+            background: radial-gradient(98.66% 100% at 50% 0%, #FFCE85 0%, #FFAE33 100%);
+            white-space: nowrap;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            border-left: 2px solid $black;
+            border-right: 2px solid $black;
+            border-top: 2px solid $black;
+
+            &:first-child {
+                border-top-left-radius: 2px;
+                border-top-right-radius: 2px;
+            }
+
+            &:last-child {
+                border-bottom: 2px solid $black;
+                border-bottom-left-radius: 2px;
+                border-bottom-right-radius: 2px;
+            }
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        display: block;
+    }
 }

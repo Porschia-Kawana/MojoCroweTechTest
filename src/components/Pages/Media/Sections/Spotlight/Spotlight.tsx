@@ -14,21 +14,19 @@ function SpotlightSection({ data }) {
                     {articles.length > 0 && (
                         <Card card={articles[0]} type={'large'} />
                     )}
-                    <span className={styles.separator} />
+                    <span className={styles.featureSeparator} />
                 </div>
                 <div className={styles.articles}>
-                    {articles.map((article, idx) =>
-                        <div key={article.id} className={styles.card}>
+                    <div>
+                        {articles.map((article, idx) =>
                             <Card card={article} type={'small'} separator={!(articles.length - 1 === idx)} />
-                        </div>
-                    )}
-                    <span className={styles.separator} />
+                        )}
+                    </div>
+                    <span className={styles.articleSeparator} />
                 </div>
                 <div className={styles.audio}>
                     {audioItems.map((audio, idx) =>
-                        <div key={audio.id} className={styles.card}>
-                            <Card card={audio} type={'audio'} separator={!(audioItems.length - 1 === idx)} />
-                        </div>
+                        <Card card={audio} type={'audio'} separator={!(audioItems.length - 1 === idx)} />
                     )}
                 </div>
             </div>

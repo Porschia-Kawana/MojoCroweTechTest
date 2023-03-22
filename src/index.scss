@@ -18,6 +18,10 @@ main {
   box-sizing: border-box;
   padding: 0 120px;
   width: 100vw;
+
+  @media (max-width: $breakpoint-phone) {
+    padding: 0 30px;
+  }
 }
 
 section {

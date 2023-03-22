@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Navigation from '../../common/Navigation/Navigation';
@@ -36,10 +36,17 @@ const links = [
 ]
 
 function Header() {
-    const customStyles = {
+    const [dropdownOpen, setDropdownOpen] = useState(false)
+    const customInlineStyles = {
         navbar: styles.navbar,
         navitem: styles.navitem,
         activeItem: styles.active
+    }
+
+    const customDropdownStyles = {
+        navbar: styles.menu,
+        navitem: styles.dropdownItem,
+        activeItem: ""
     }
 
     return (
@@ -48,7 +55,15 @@ function Header() {
                 <NavLink className={styles.logo} to="/">
                     <img src={MojoLogo} alt="Mojo Logo" />
                 </NavLink>
-                <Navigation styles={customStyles} links={links} />
+                <div className={styles.inlineNavigation}>
+                    <Navigation styles={customInlineStyles} links={links} />
+                </div>
+                <div className={styles.dropdownNavigation}>
+                    <div className={dropdownOpen ? styles.dropup : styles.dropdown} role="button" tabIndex={0} onClick={() => setDropdownOpen(!dropdownOpen)} />
+                    <div className={dropdownOpen ? styles.menu : styles.hidden}>
+                        <Navigation styles={customDropdownStyles} links={links} />
+                    </div>
+                </div>
             </div>
             <div className={styles.content}>
                 <div>

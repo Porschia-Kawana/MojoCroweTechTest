@@ -1,24 +1,58 @@
 @import '../../../../../global.scss';
 
 .spotlight {
-    display: grid;
-    gap: 24px;
-    grid-template-columns: minmax(auto, 540px) 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: $breakpoint-tablet) {
+        flex-wrap: wrap;
+    }
 
     .featured {
         display: flex;
+        min-width: 350px;
+        width: 50%;
+
+        @media (max-width: $breakpoint-tablet) {
+            margin-bottom: 24px;
+            width: 100%;
+        }
     }
 
     .articles {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        margin-right: 24px;
+        min-width: 200px;
+        width: 25%;
+
+        @media (max-width: $breakpoint-tablet) {
+            width: calc(50% - 24px);
+        }
+
+        @media (max-width: $breakpoint-phone) {
+            margin-bottom: 24px;
+            width: 100%
+        }
     }
 
     .audio {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        margin-left: 24px;
+        min-width: 200px;
+        width: 25%;
+
+        @media (max-width: $breakpoint-tablet) {
+            width: calc(50% - 24px);
+        }
+
+        @media (max-width: $breakpoint-phone) {
+            margin: 0;
+            width: 100%
+        }
     }
 
     h3,
@@ -33,12 +67,25 @@
     }
 }
 
-.card {
-    margin-right: 24px;
-}
-
-.separator {
+@mixin separator {
     background-color: $very-light-grey;
     height: 100%;
     width: 1px;
+    margin: 0 24px;
+}
+
+.featureSeparator {
+    @include separator;
+
+    @media (max-width: $breakpoint-tablet) {
+        width: 0;
+    }
+}
+
+.articleSeparator {
+    @include separator;
+
+    @media (max-width: $breakpoint-phone) {
+        width: 0
+    }
 }
