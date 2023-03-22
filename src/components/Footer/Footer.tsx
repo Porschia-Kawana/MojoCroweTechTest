@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Navigation from '../../common/Navigation/Navigation';
+
 import styles from './Footer.module.scss';
 
 const links = [

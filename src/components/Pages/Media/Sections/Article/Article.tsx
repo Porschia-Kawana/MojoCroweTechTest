@@ -1,27 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
 import Card from '../../../../../common/Cards/Card';
-import styles from './Article.module.scss';
 import Pagination from '../../../../../common/Pagination/Pagination';
-import { MediaData } from '../../../../../interfaces/data'
+import { MediaData } from '../../../../../interfaces/data';
+
+import styles from './Article.module.scss';
 
 interface Props {
-    data: MediaData[]
+    data: MediaData[];
 }
 
 function ArticleSection({ data }: Props) {
-    const [articles, setArticles] = useState(data.slice(0, 6))
+    const filteredData = data.filter((item: MediaData) => item.type === 'article')
+    const [articles, setArticles] = useState(filteredData.slice(0, 6))
     const [range, setRange] = useState([0, 6])
 
     const handlePagination = (start: number, end: number) => {
         setRange([start, end])
-        setArticles(data.slice(start, end))
+        setArticles(filteredData.slice(start, end))
     }
 
     return (
         <section>
             <div className={styles.heading}>
-                <h2>Article</h2>
-                <Pagination callback={handlePagination} range={range} totalCount={data.length} numOfItems={6} />
+                <h2>Articles</h2>
+                <Pagination callback={handlePagination} range={range} totalCount={filteredData.length} numOfItems={6} />
             </div>
             <div className={styles.article}>
                 {articles.map((article) => (

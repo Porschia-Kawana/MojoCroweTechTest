@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './LargeArticleCard.module.scss';
 
 interface Props {
@@ -6,15 +7,16 @@ interface Props {
     title: string;
     description?: string;
     thumbnailUri?: string;
+    url?: string;
     separator?: boolean;
 }
 
 function LargeArticleCard(props: Props) {
     return (
         <div className={styles.wrapper}>
-            <a className={styles.card}>
+            <a className={styles.card} data-testid={props.id} href={props.url}>
                 {props.thumbnailUri && (
-                    <img className={styles.image} src={props.thumbnailUri} alt={`${props.title} - Article Image`} />
+                    <img className={styles.image} src={props.thumbnailUri} alt={`${props.title} - Large Article Image`} />
                 )}
                 <div>
                     {props.title && (

@@ -10,6 +10,7 @@ interface Props {
     thumbnailUri?: string;
     publishedAt?: string;
     source?: string;
+    url?: string;
     separator?: boolean;
 }
 
@@ -22,7 +23,7 @@ function MediumArticleCard(props: Props) {
 
     return (
         <div className={styles.wrapper}>
-            <a className={styles.card}>
+            <a className={styles.card} data-testid={props.id} href={props.url}>
                 {props.thumbnailUri && (
                     <img className={styles.image} src={props.thumbnailUri} alt={`${props.title} - Article Image`} />
                 )}

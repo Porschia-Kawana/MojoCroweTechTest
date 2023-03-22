@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+
 import Card from '../../../../../common/Cards/Card';
+import { MediaData } from '../../../../../interfaces/data';
+
 import styles from './Spotlight.module.scss';
-import { MediaData } from '../../../../../interfaces/data'
 
 interface Props {
-    data: MediaData[]
+    data: MediaData[];
 }
 
 function SpotlightSection({ data }: Props) {

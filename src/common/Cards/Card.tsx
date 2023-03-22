@@ -1,4 +1,5 @@
 import React from 'react';
+
 import LargeArticleCard from './Article/Large/LargeArticleCard';
 import MediumArticleCard from './Article/Medium/MediumArticleCard';
 import SmallArticleCard from './Article/Small/SmallArticleCard';
@@ -27,13 +28,13 @@ interface Props {
 function Card(props: Props) {
     switch (props.type) {
         case 'large':
-            return (<LargeArticleCard separator={props.separator} id={props.card.id} title={props.card.title} description={props.card.description} thumbnailUri={props.card.thumbnailUri} />)
+            return (<LargeArticleCard separator={props.separator} id={props.card.id} title={props.card.title} description={props.card.description} thumbnailUri={props.card.thumbnailUri} url={props.card.url} />)
         case 'medium':
-            return (<MediumArticleCard separator={props.separator} id={props.card.id} title={props.card.title} description={props.card.description} thumbnailUri={props.card.thumbnailUri} publishedAt={props.card.publishedAt} source={props.card.source} />)
+            return (<MediumArticleCard separator={props.separator} id={props.card.id} title={props.card.title} description={props.card.description} thumbnailUri={props.card.thumbnailUri} publishedAt={props.card.publishedAt} source={props.card.source} url={props.card.url} />)
         case 'small':
-            return (<SmallArticleCard separator={props.separator} id={props.card.id} title={props.card.title} description={props.card.description} />)
+            return (<SmallArticleCard separator={props.separator} id={props.card.id} title={props.card.title} description={props.card.description} url={props.card.url} />)
         case 'audio':
-            return (<AudioCard separator={props.separator} id={props.card.id} title={props.card.title} thumbnailUri={props.card.thumbnailUri} />)
+            return (<AudioCard separator={props.separator} id={props.card.id} title={props.card.title} thumbnailUri={props.card.thumbnailUri} url={props.card.url} />)
         default:
             return (<div />)
     }
