@@ -58,11 +58,11 @@ function Header() {
                 <div className={styles.inlineNavigation}>
                     <Navigation styles={customInlineStyles} links={links} />
                 </div>
-                <div className={styles.dropdownNavigation}>
-                    <div className={dropdownOpen ? styles.dropup : styles.dropdown} role="button" tabIndex={0} onClick={() => setDropdownOpen(!dropdownOpen)} />
-                    <div className={dropdownOpen ? styles.menu : styles.hidden}>
-                        <Navigation styles={customDropdownStyles} links={links} />
-                    </div>
+                <div className={dropdownOpen ? styles.dropup : styles.dropdown} role="button" tabIndex={0} onClick={() => setDropdownOpen(!dropdownOpen)} />
+            </div>
+            <div className={styles.dropdownNavigation}>
+                <div className={dropdownOpen ? styles.menu : styles.hidden}>
+                    <Navigation styles={customDropdownStyles} links={links} />
                 </div>
             </div>
             <div className={styles.content}>

@@ -10,6 +10,7 @@
     padding: 52px 120px 44px;
 
     @media (max-width: $breakpoint-phone) {
+        gap: 0;
         padding: 52px 30px 44px;
         width: 100vw;
     }
@@ -76,61 +77,54 @@
     }
 }
 
+.dropdown {
+    border-bottom: 2px solid $black;
+    border-right: 2px solid $black;
+    display: none;
+    height: 12px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    transform: rotate(45deg);
+    width: 12px;
+
+    @media (max-width: $breakpoint-tablet) {
+        display: block;
+    }
+}
+
+.dropup {
+    border-left: 2px solid $black;
+    border-top: 2px solid $black;
+    display: none;
+    height: 12px;
+    width: 12px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    transform: rotate(45deg);
+
+    @media (max-width: $breakpoint-tablet) {
+        display: block;
+    }
+}
+
 .dropdownNavigation {
     display: none;
-
-    .dropdown {
-        border-right: 2px solid $black;
-        border-bottom: 2px solid $black;
-        height: 12px;
-        width: 12px;
-        transform: rotate(45deg);
-        margin-bottom: 12px;
-        margin-right: 12px;
-    }
-
-    .dropup {
-        border-left: 2px solid $black;
-        border-top: 2px solid $black;
-        height: 12px;
-        width: 12px;
-        transform: rotate(45deg);
-        margin-bottom: 12px;
-        margin-right: 12px;
-    }
+    width: 100%;
 
     .menu {
         display: flex;
         flex-direction: column;
-        position: absolute;
-        top: 45px;
-        right: 72px;
-        width: -moz-fit-content;
-        width: fit-content;
-        z-index: 9;
+        width: 100%;
 
         .dropdownItem {
-            color: $white;
-            background: radial-gradient(98.66% 100% at 50% 0%, #FFCE85 0%, #FFAE33 100%);
-            white-space: nowrap;
-            padding: 5px 10px;
+            color: $black;
+            background: transparent;
+            box-sizing: border-box;
             display: flex;
             justify-content: center;
+            padding: 5px 10px;
+            white-space: nowrap;
             width: 100%;
-            border-left: 2px solid $black;
-            border-right: 2px solid $black;
-            border-top: 2px solid $black;
-
-            &:first-child {
-                border-top-left-radius: 2px;
-                border-top-right-radius: 2px;
-            }
-
-            &:last-child {
-                border-bottom: 2px solid $black;
-                border-bottom-left-radius: 2px;
-                border-bottom-right-radius: 2px;
-            }
         }
     }
 
