@@ -1,9 +1,6 @@
 @import './global.scss';
 
-body {
-  margin: 0;
-}
-
+// App Layout
 .app {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -11,35 +8,62 @@ body {
   width: 100vw;
 }
 
-h1 {
+// Html Sections
+body {
+  color: $black;
   margin: 0;
-  font-size: $xxlarge-font-size;
-  font-family: $heading-font-family;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: $black;
-}
-
-h2 {
-  font-size: $xlarge-font-size;
-  font-family: $heading-font-family;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: $black;
-}
-
-h3 {
-  margin: 0;
-  font-family: $title-font-family;
-  font-size: $large-font-size;
-  // line-height: 28px;
-  color: $black;
 }
 
 main {
   box-sizing: border-box;
-  padding: 7px 120px 44px;
+  padding: 0 120px;
   width: 100vw;
+}
+
+section {
+  box-sizing: border-box;
+  padding: 44px 0;
+  width: 100%;
+}
+
+// Headings
+h1 {
+  font-family: $bold-font;
+  font-size: $xxlarge-font-size;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: $bold-font;
+  font-size: $xlarge-font-size;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: $title-font;
+  font-size: $large-font-size;
+  font-weight: 400;
+  margin: 0;
+}
+
+h4 {
+  font-family: $title-font;
+  font-size: $small-font-size;
+  font-weight: 400;
+  margin: 0;
+}
+
+h5 {
+  font-family: $medium-font;
+  font-size: $xsmall-font-size;
+  font-weight: normal;
+  margin: 0;
 }
 
 a {

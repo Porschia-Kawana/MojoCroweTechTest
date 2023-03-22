@@ -1,0 +1,24 @@
+@import '../../../../global.scss';
+@import '../../Card.scss';
+
+.wrapper {
+
+    @include wrapper;
+}
+
+.card {
+
+    @include card;
+}
+
+.description {
+    font-size: $xxsmall-font-size;
+
+    @include hidden-description;
+}
+
+.separator {
+    margin: 20px 0;
+
+    @include separator;
+}

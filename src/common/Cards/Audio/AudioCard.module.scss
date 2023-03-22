@@ -1,0 +1,24 @@
+@import '../Card.scss';
+
+.wrapper {
+
+    @include wrapper;
+}
+
+.card {
+
+    @include card;
+}
+
+.image {
+    border-radius: 1px;
+    height: 64px;
+    margin-right: 12px;
+    width: 64px;
+}
+
+.separator {
+    margin: 16px 0;
+
+    @include separator;
+}

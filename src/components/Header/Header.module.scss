@@ -1,0 +1,52 @@
+@import '../../global.scss';
+
+.header {
+    align-items: flex-start;
+    background: $header-background;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 52px 120px 44px;
+    width: 100vw;
+}
+
+.content {
+    align-items: center;
+    display: flex;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.navbar {
+    align-items: center;
+    display: flex;
+    gap: 32px;
+}
+
+.navitem {
+    align-items: center;
+    color: $very-dark-grey;
+    display: flex;
+    font-family: $medium-font;
+    font-size: 20px;
+    height: 24px;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+}
+
+.active {
+    background-color: $very-dark-grey;
+    border-radius: 24px;
+    color: $white;
+    padding: 6px 16px;
+}

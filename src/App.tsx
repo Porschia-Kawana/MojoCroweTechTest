@@ -1,44 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import { gql, useQuery } from '@apollo/client';
+import React from 'react'
+import {
+	BrowserRouter,
+	Routes,
+	Route,
+	Navigate
+} from "react-router-dom";
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import ArticleSection from './components/Sections/Article/Article';
-import SpotlightSection from './components/Sections/Spotlight/Spotlight';
-
-const GetMedia = gql`
-	query GetMedia {
-		media {
-			items {
-				featured
-				id
-				description
-				createdAt
-				publishedAt
-				source
-				thumbnailUri
-				title
-				type
-				updatedAt
-				url
-			}
-		}
-	}
-`;
+import MediaPage from './components/Pages/Media/Media';
+import ErrorPage from './components/Pages/ErrorPage';
 
 function App() {
-	const { data } = useQuery(GetMedia);
-
 	return (
 		<div className='app'>
-			<Header />
-			{data && (
-				<main>
-					<SpotlightSection data={data.media.items} />
-					<ArticleSection data={data.media.items.filter((item) => item.type === 'article')} />
-				</main>
-			)}
-			<Footer />
+			<BrowserRouter>
+				<Header />
+				<Routes>
+					<Route path="/" element={<ErrorPage />} />
+					<Route path="/course" element={<ErrorPage />} />
+					<Route path="/media" element={<MediaPage />} />
+					<Route path="/merch" element={<ErrorPage />} />
+					<Route path="/contact" element={<ErrorPage />} />
+					<Route path="/account" element={<ErrorPage />} />
+					<Route path="/privacy" element={<ErrorPage />} />
+					<Route path="/terms_conditions" element={<ErrorPage />} />
+				</Routes>
+				<Footer />
+			</BrowserRouter>
 		</div>
 	);
 }

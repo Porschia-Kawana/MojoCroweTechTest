@@ -1,0 +1,33 @@
+@import '../../global.scss';
+
+.footer {
+    background: $very-dark-grey;
+    color: $white;
+    display: flex;
+    font-family: $normal-font;
+    font-size: $xsmall-font-size;
+    height: fit-content;
+    letter-spacing: -0.4px;
+    padding: 44px 120px;
+}
+
+.navbar {
+    align-items: center;
+    background: $very-dark-grey;
+    display: flex;
+}
+
+.navitem {
+    color: $white;
+    text-decoration: none;
+
+    &::after {
+        content: '|';
+        margin: 10px;
+    }
+}
+
+.copywrite {
+    align-items: center;
+    display: flex;
+}

@@ -1,0 +1,44 @@
+@import '../../../../../global.scss';
+
+.spotlight {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: minmax(auto, 540px) 1fr 1fr;
+
+    .featured {
+        display: flex;
+    }
+
+    .articles {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .audio {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    h3,
+    h4 {
+        color: $very-dark-grey;
+    }
+
+    p {
+        color: $grey;
+        font-family: $normal-font;
+        letter-spacing: -0.4px;
+    }
+}
+
+.card {
+    margin-right: 24px;
+}
+
+.separator {
+    background-color: $very-light-grey;
+    height: 100%;
+    width: 1px;
+}

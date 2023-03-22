@@ -1,0 +1,32 @@
+@import '../../../../global.scss';
+@import '../../Card.scss';
+
+.wrapper {
+
+    @include wrapper;
+}
+
+.card {
+    flex-direction: column;
+
+    @include card;
+}
+
+.image {
+    border-radius: 2px;
+    filter: $image-dropshadow;
+    height: 360px;
+    margin-bottom: 28px;
+    min-width: 540px;
+    width: 100%;
+}
+
+.description {
+    font-size: $xsmall-font-size;
+}
+
+.separator {
+    margin: 32px 0;
+
+    @include separator;
+}

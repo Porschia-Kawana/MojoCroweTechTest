@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Card from '../../../common/Cards/Card';
+import Card from '../../../../../common/Cards/Card';
 import styles from './Article.module.scss';
-import Pagination from '../../../common/Pagination/Pagination';
+import Pagination from '../../../../../common/Pagination/Pagination';
 
 function ArticleSection({ data }) {
     const [articles, setArticles] = useState(data.slice(0, 6))
@@ -14,11 +14,11 @@ function ArticleSection({ data }) {
 
     return (
         <section>
-            <div className={styles.articleHeading}>
+            <div className={styles.heading}>
                 <h2>Article</h2>
                 <Pagination callback={handlePagination} range={range} totalCount={data.length} numOfItems={6} />
             </div>
-            <div className={styles.grid}>
+            <div className={styles.article}>
                 {articles.map((article) => (
                     <Card card={article} type={'medium'} separator={true} />
                 ))}

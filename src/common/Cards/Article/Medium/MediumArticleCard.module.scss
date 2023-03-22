@@ -1,0 +1,56 @@
+@import '../../../../global.scss';
+@import '../../Card.scss';
+
+.wrapper {
+
+    @include wrapper;
+}
+
+.card {
+    flex-direction: row-reverse;
+
+    @include card;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-right: 24px;
+}
+
+.image {
+    border-radius: 2px;
+    filter: $image-dropshadow;
+    height: 100px;
+    width: 150px;
+}
+
+.publishedAt {
+    color: $grey;
+    font-family: $normal-font;
+    font-size: $xsmall-font-size;
+    font-weight: bold;
+    letter-spacing: -0.4px;
+    margin-bottom: 8px;
+}
+
+.source {
+    color: $light-grey;
+    font-family: $normal-font;
+    font-size: $xxsmall-font-size;
+    font-weight: bold;
+    letter-spacing: -0.4px;
+    margin-top: 8px;
+}
+
+.description {
+    font-size: $xsmall-font-size;
+
+    @include hidden-description;
+}
+
+.separator {
+    margin: 32px 0;
+
+    @include separator;
+}

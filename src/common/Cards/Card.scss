@@ -1,0 +1,26 @@
+@import '../../global.scss';
+
+@mixin wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin card {
+    align-items: center;
+    display: flex;
+}
+
+@mixin separator {
+    background-color: $very-light-grey;
+    height: 1px;
+    width: 100%;
+}
+
+@mixin hidden-description {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

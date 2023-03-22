@@ -1,10 +1,20 @@
-.grid {
+@import '../../../../../global.scss';
+
+.article {
     display: grid;
     gap: 0 32px;
     grid-template-columns: 1fr 1fr;
+
+    h3 {
+        color: $black;
+    }
+
+    p {
+        color: $dark-grey;
+    }
 }
 
-.articleHeading {
+.heading {
     align-items: center;
     display: flex;
     justify-content: space-between;
